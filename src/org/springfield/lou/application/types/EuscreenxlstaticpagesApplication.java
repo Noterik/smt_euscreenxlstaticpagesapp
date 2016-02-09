@@ -74,6 +74,9 @@ public class EuscreenxlstaticpagesApplication extends Html5Application{
 		}else if(page.equals("privacy")){
 			loadPrivacy(s);
 		}
+		else if(page.equals("help")){
+			loadHelp(s);
+		}
 	}
  	
  	public void loadContact(Screen s){
@@ -92,6 +95,12 @@ public class EuscreenxlstaticpagesApplication extends Html5Application{
  		this.loadContent(s, "privacypage", "privacypage");
  		this.loadGeneric(s);
  		this.loadStyleSheet(s, "privacy");
+ 	}
+ 	
+ 	public void loadHelp(Screen s){
+ 		this.loadContent(s, "helppage", "helppage");
+ 		this.loadGeneric(s);
+ 		this.loadStyleSheet(s, "help");
  	}
 
 }

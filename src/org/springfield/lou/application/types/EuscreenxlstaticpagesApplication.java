@@ -66,6 +66,7 @@ public class EuscreenxlstaticpagesApplication extends Html5Application{
  	
 	public void init(Screen s){
 		String page = s.getParameter("page");
+		System.out.println("INIT EUSCREEN STATIC PAGES APPLICATION(" + page + ")");
 		System.out.println("LOAD PAGE: " + page);
 		if(page.equals("contact")){
 			loadContact(s);
@@ -98,6 +99,7 @@ public class EuscreenxlstaticpagesApplication extends Html5Application{
  	}
  	
  	public void loadHelp(Screen s){
+ 		System.out.println("============= loadHelp() =============");
  		this.loadContent(s, "helppage", "helppage");
  		this.loadGeneric(s);
  		this.loadStyleSheet(s, "help");

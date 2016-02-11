@@ -160,3 +160,15 @@
 .help .main .static-page .content .pads .section .container-fluid .row .col-md-4 {
    	margin-top: 20px;
 }
+.help .main .static-page .content .pads .section .container-fluid .row .col-md-4 .play {
+   	display: none;
+    position: absolute;
+    right: 15px;
+    color: #FFF;
+    border-radius: 7px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2px 12px
+}
+.showtext {
+	display: block !important;
+}

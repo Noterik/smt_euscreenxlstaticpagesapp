@@ -136,7 +136,15 @@
   background: transparent url("/eddie/apps/euscreenxlelements/img/content/helppagebg/video-bg-pink.png") repeat scroll 0% 0%;
   background-repeat: no-repeat;
 }
-.help .main .static-page .content .pads .section .container-fluid .row .col-md-4 .youtube-dummy {
+.help .main .static-page .content .pads .section .container-fluid .row .col-md-4 .youtube-dummy-1 {
+  width: 100%;
+  background-repeat: no-repeat;
+}
+.help .main .static-page .content .pads .section .container-fluid .row .col-md-4 .youtube-dummy-2 {
+  width: 100%;
+  background-repeat: no-repeat;
+}
+.help .main .static-page .content .pads .section .container-fluid .row .col-md-4 .youtube-dummy-3 {
   width: 100%;
   background-repeat: no-repeat;
 }

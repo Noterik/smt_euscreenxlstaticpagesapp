@@ -148,3 +148,15 @@
   width: 100%;
   background-repeat: no-repeat;
 }
+.help .main .static-page .content .pads .section .container-fluid .row .col-md-4 .thumbnail-title {
+   	color: #FFF;
+    position: absolute;
+    z-index: 5;
+    top: 41px;
+    width: 60%;
+    left: 26px;
+    font-size: 14px;
+}
+.help .main .static-page .content .pads .section .container-fluid .row .col-md-4 {
+   	margin-top: 20px;
+}

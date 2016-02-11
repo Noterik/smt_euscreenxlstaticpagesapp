@@ -112,3 +112,31 @@
 	margin: 0;
 	font-weight: bold;
 }
+.help .main .static-page .content .pads .section .container-fluid .row .col-md-4 .bg-1 {
+  width: 204px;
+  height: 107px;
+  position: absolute;
+  bottom: 0px;
+  background: transparent url("/eddie/apps/euscreenxlelements/img/content/helppagebg/video-bg-blue.png") repeat scroll 0% 0%;
+  background-repeat: no-repeat;
+}
+.help .main .static-page .content .pads .section .container-fluid .row .col-md-4 .bg-2 {
+  width: 204px;
+  height: 107px;
+  position: absolute;
+  bottom: 0px;
+  background: transparent url("/eddie/apps/euscreenxlelements/img/content/helppagebg/video-bg-green.png") repeat scroll 0% 0%;
+  background-repeat: no-repeat;
+}
+.help .main .static-page .content .pads .section .container-fluid .row .col-md-4 .bg-3 {
+  width: 204px;
+  height: 107px;
+  position: absolute;
+  bottom: 0px;
+  background: transparent url("/eddie/apps/euscreenxlelements/img/content/helppagebg/video-bg-pink.png") repeat scroll 0% 0%;
+  background-repeat: no-repeat;
+}
+.help .main .static-page .content .pads .section .container-fluid .row .col-md-4 .youtube-dummy {
+  width: 100%;
+  background-repeat: no-repeat;
+}

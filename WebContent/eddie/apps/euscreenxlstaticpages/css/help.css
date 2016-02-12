@@ -172,3 +172,11 @@
 .showtext {
 	display: block !important;
 }
+.help .main .static-page .content .pads .inner-a {
+	color: blue;
+    text-decoration: underline;
+    border: none;
+}
+.help .main .static-page .content .pads .modified-faq-ul li {
+	color: #777;
+}

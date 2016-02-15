@@ -180,3 +180,9 @@
 .help .main .static-page .content .pads .modified-faq-ul li {
 	color: #777;
 }
+
+@media (max-width: 400px){
+    .help .main .static-page .modified-frame {
+		height: 145px;
+	}
+}

@@ -5,9 +5,11 @@ import org.springfield.lou.euscreen.config.Config;
 import org.springfield.lou.euscreen.config.ConfigEnvironment;
 import org.springfield.lou.euscreen.config.SettingNotExistException;
 import org.springfield.lou.screen.Screen;
+import javax.servlet.http.HttpServletRequest;
 
 public class EuscreenxlstaticpagesApplication extends Html5Application{
-	
+	public String ipAddress="";
+	public static boolean isAndroid;
 	private Config config;
 	
  	public EuscreenxlstaticpagesApplication(String id) {
@@ -99,10 +101,47 @@ public class EuscreenxlstaticpagesApplication extends Html5Application{
  	}
  	
  	public void loadHelp(Screen s){
- 		System.out.println("============= loadHelp() =============");
- 		this.loadContent(s, "helppage", "helppage");
+ 		if(!isAndroid){
+ 			this.loadContent(s, "helppage", "helppage");
+ 		}else {
+ 			this.loadContent(s, "helppagemobilevideos", "helppagemobilevideos");
+ 		}
  		this.loadGeneric(s);
  		this.loadStyleSheet(s, "help");
  	}
+ 	
+ 	public String getMetaHeaders(HttpServletRequest request) {
+		ipAddress=getClientIpAddress(request);
+				
+		String browserType = request.getHeader("User-Agent");
+		if(browserType.indexOf("Mobile") != -1) {
+			String ua = request.getHeader("User-Agent").toLowerCase();
+			isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");	
+		}	
+		return "";
+	}
+ 	
+	private static final String[] HEADERS_TO_TRY = { 
+			"X-Forwarded-For",
+			"Proxy-Client-IP",
+			"WL-Proxy-Client-IP",
+			"HTTP_X_FORWARDED_FOR",
+			"HTTP_X_FORWARDED",
+			"HTTP_X_CLUSTER_CLIENT_IP",
+			"HTTP_CLIENT_IP",
+			"HTTP_FORWARDED_FOR",
+			"HTTP_FORWARDED",
+			"HTTP_VIA",
+			"REMOTE_ADDR" };
+			
+		public static String getClientIpAddress(HttpServletRequest request) {
+			for (String header : HEADERS_TO_TRY) {
+			String ip = request.getHeader(header);
+			if (ip != null && ip.length() != 0 && !"unknown".equalsIgnoreCase(ip)) {
+			return ip;
+			}
+			}
+			return request.getRemoteAddr();
+		}
 
 }

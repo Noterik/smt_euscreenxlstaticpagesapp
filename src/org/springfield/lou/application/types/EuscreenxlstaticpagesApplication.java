@@ -105,7 +105,8 @@ public class EuscreenxlstaticpagesApplication extends Html5Application{
  	}
  	
  	public void loadHelp(Screen s){
- 		if(!isAndroid){
+ 		System.out.println("IF MOBILE: " + isAndroid);
+ 		if(isAndroid == false){
  			this.loadContent(s, "helppage", "helppage");
  		}else {
  			this.loadContent(s, "helppagemobilevideos", "helppagemobilevideos");
@@ -120,11 +121,19 @@ public class EuscreenxlstaticpagesApplication extends Html5Application{
 				
 		String browserType = request.getHeader("User-Agent");
 		
+		System.out.println("===============");
+		System.out.println(browserType);
 		if(browserType.indexOf("Mobile") != -1 ) {
 			String ua = request.getHeader("User-Agent").toLowerCase();
-			isAndroid = true;
+			isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
 			
-		}	
+			if(!isAndroid){
+				isAndroid = browserType.indexOf("iPhone") > -1;
+			}
+			
+		}else{
+			isAndroid = false;
+		}
 		return "";
 	}
  	

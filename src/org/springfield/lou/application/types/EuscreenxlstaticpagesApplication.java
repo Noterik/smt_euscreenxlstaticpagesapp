@@ -5,11 +5,15 @@ import org.springfield.lou.euscreen.config.Config;
 import org.springfield.lou.euscreen.config.ConfigEnvironment;
 import org.springfield.lou.euscreen.config.SettingNotExistException;
 import org.springfield.lou.screen.Screen;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import javax.servlet.http.HttpServletRequest;
 
 public class EuscreenxlstaticpagesApplication extends Html5Application{
 	public String ipAddress="";
-	public static boolean isAndroid;
+	public static boolean isAndroid = false;
 	private Config config;
 	
  	public EuscreenxlstaticpagesApplication(String id) {
@@ -111,13 +115,24 @@ public class EuscreenxlstaticpagesApplication extends Html5Application{
  	}
  	
  	public String getMetaHeaders(HttpServletRequest request) {
+ 	    Pattern pattern;
+ 	    Matcher matcher;
+
 		ipAddress=getClientIpAddress(request);
 				
 		String browserType = request.getHeader("User-Agent");
-		if(browserType.indexOf("Mobile") != -1) {
-			String ua = request.getHeader("User-Agent").toLowerCase();
-			isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");	
-		}	
+		
+		pattern = Pattern.compile("/Mobile|iP(hone|od|ad)|Android|BlackBerry|IEMobile|Kindle|NetFront|Silk-Accelerated|(hpw|web)OS|Fennec|Minimo|Opera M(obi|ini)|Blazer|Dolfin|Dolphin|Skyfire|Zune/");
+	    matcher = pattern.matcher(browserType);
+	    System.out.println(matcher.matches());
+	    System.out.println(matcher.groupCount());
+	    if(matcher.lookingAt()){
+	    	isAndroid = true;
+	    }
+//		if(browserType.indexOf("Mobile") != -1) {
+//			String ua = request.getHeader("User-Agent").toLowerCase();
+//			isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");	
+//		}	
 		return "";
 	}
  	

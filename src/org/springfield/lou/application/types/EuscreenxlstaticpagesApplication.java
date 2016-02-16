@@ -115,24 +115,16 @@ public class EuscreenxlstaticpagesApplication extends Html5Application{
  	}
  	
  	public String getMetaHeaders(HttpServletRequest request) {
- 	    Pattern pattern;
- 	    Matcher matcher;
 
 		ipAddress=getClientIpAddress(request);
 				
 		String browserType = request.getHeader("User-Agent");
 		
-		pattern = Pattern.compile("/Mobile|iP(hone|od|ad)|Android|BlackBerry|IEMobile|Kindle|NetFront|Silk-Accelerated|(hpw|web)OS|Fennec|Minimo|Opera M(obi|ini)|Blazer|Dolfin|Dolphin|Skyfire|Zune/");
-	    matcher = pattern.matcher(browserType);
-	    System.out.println(matcher.matches());
-	    System.out.println(matcher.groupCount());
-	    if(matcher.lookingAt()){
-	    	isAndroid = true;
-	    }
-//		if(browserType.indexOf("Mobile") != -1) {
-//			String ua = request.getHeader("User-Agent").toLowerCase();
-//			isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");	
-//		}	
+		if(browserType.indexOf("Mobile") != -1 ) {
+			String ua = request.getHeader("User-Agent").toLowerCase();
+			isAndroid = true;
+			
+		}	
 		return "";
 	}
  	
@@ -152,9 +144,9 @@ public class EuscreenxlstaticpagesApplication extends Html5Application{
 		public static String getClientIpAddress(HttpServletRequest request) {
 			for (String header : HEADERS_TO_TRY) {
 			String ip = request.getHeader(header);
-			if (ip != null && ip.length() != 0 && !"unknown".equalsIgnoreCase(ip)) {
-			return ip;
-			}
+				if (ip != null && ip.length() != 0 && !"unknown".equalsIgnoreCase(ip)) {
+					return ip;
+				}
 			}
 			return request.getRemoteAddr();
 		}

@@ -126,11 +126,12 @@ public class EuscreenxlstaticpagesApplication extends Html5Application{
 		if(browserType.indexOf("Mobile") != -1 ) {
 			String ua = request.getHeader("User-Agent").toLowerCase();
 			isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
-			
-			if(!isAndroid){
-				isAndroid = browserType.indexOf("iPhone") > -1;
+			System.out.println("==============");
+			System.out.println(isAndroid);
+			if(browserType.indexOf("iPhone") > -1 || browserType.indexOf("iPad") > -1){
+				
+				isAndroid = true;
 			}
-			
 		}else{
 			isAndroid = false;
 		}

@@ -45,8 +45,8 @@ public class EuscreenxlstaticpagesApplication extends Html5Application{
 	}
  	
  	private void loadGeneric(Screen s){
-		this.loadStyleSheet(s, "fontawesome");
  		this.loadStyleSheet(s, "bootstrap");
+		this.loadStyleSheet(s, "fontawesome");
  		this.loadStyleSheet(s, "theme");
  		this.loadStyleSheet(s, "genericadditions");
  		this.loadStyleSheet(s, "all");
@@ -55,7 +55,7 @@ public class EuscreenxlstaticpagesApplication extends Html5Application{
  		this.loadContent(s,"footer", "footer");
  		this.loadContent(s,"mobilenav", "mobilenav");
  		this.loadContent(s,"linkinterceptor","linkinterceptor");
- 		
+ 		 		
  		if(config != null){
  			this.loadContent(s, "config", "config");
  			this.loadContent(s, "urltransformer", "urltransformer");

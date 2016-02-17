@@ -186,3 +186,14 @@
 		height: 145px;
 	}
 }
+
+.page.help .videowrapper{
+    position: relative;
+    padding-bottom: 56%;
+    margin-bottom: 10px;
+}
+
+.page.help .videowrapper iframe{
+    position: absolute;
+    width: 100%
+}

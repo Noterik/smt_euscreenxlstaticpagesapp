@@ -1,2 +1,3 @@
 setUrlTrigger(/lou/euscreen/help.html,/lou/domain/webtv/html5application/euscreenxlstaticpages)
+setUrlTrigger(/lou/euscreen/help,/lou/domain/webtv/html5application/euscreenxlstaticpages)
 callServer(loadHelp,screen,content)

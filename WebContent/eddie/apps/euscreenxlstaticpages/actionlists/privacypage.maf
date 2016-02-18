@@ -1,2 +1,3 @@
 setUrlTrigger(/lou/euscreen/privacy.html,/lou/domain/webtv/html5application/euscreenxlstaticpages)
+setUrlTrigger(/lou/euscreen/privacy,/lou/domain/webtv/html5application/euscreenxlstaticpages)
 callServer(loadPrivacy,screen,content)

@@ -36,3 +36,8 @@ Icon
 .Trashes
 
 dist/smt_euscreenxlstaticpagesapp.war
+build/smt_euscreenxlstaticpagesapp.jar
+
+dist/smt_euscreenxlstaticpagesapp.war
+
+WebContent/WEB-INF/lib/smt_euscreenxlstaticpagesapp.jar

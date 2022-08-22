@@ -9,7 +9,7 @@ import org.springfield.lou.screen.Screen;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 public class EuscreenxlstaticpagesApplication extends Html5Application{
 	public String ipAddress="";
